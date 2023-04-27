@@ -18,13 +18,19 @@ sudo apt-get install libpq-dev
 
 sudo apt-get install build-essential
 
-curl https://sh.rustup.rs -sSf | sh
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
-# sudo apt install cargo
+sudo apt install cargo
 
 # cargo install --locked --git https://github.com/MystenLabs/sui.git --branch testnet sui
 
+source "$HOME/.cargo/env"
+
+rustup install stable
+
 rustup update stable
+
+rustup default stable
 
 sui genesis --force
 
