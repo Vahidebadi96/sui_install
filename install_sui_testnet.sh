@@ -22,7 +22,7 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
 sudo apt install cargo
 
-# cargo install --locked --git https://github.com/MystenLabs/sui.git --branch testnet sui
+cargo install --git https://github.com/MystenLabs/sui.git --branch testnet sui
 
 source "$HOME/.cargo/env"
 
