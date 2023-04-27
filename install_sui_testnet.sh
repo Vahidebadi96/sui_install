@@ -22,7 +22,7 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
 sudo apt install cargo
 
-cargo install --git https://github.com/MystenLabs/sui.git --branch testnet sui
+# cargo install --git https://github.com/MystenLabs/sui.git --branch testnet sui
 
 source "$HOME/.cargo/env"
 
@@ -34,17 +34,13 @@ rustup default stable
 
 sui genesis --force
 
-rm -rf .sui/sui_config/client.yaml
+rm -rf /.sui/sui_config/client.yaml
 
 sui client
 
-echo "what is project name?"
+sui move new my_first_package
 
-read projectName
-
-sui move new $projectName
-
-cd $projectName && git clone https://github.com/Vahidebadi96/sources
+cd my_first_package && git clone https://github.com/Vahidebadi96/sources
 
 sui client publish --gas-budget 30000000
 
